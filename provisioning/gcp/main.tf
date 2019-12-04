@@ -18,7 +18,7 @@ resource "google_compute_instance" "tf_test_vm" {
   zone         = "${var.gcp_zone}"
   count        = "${var.num_hosts}"
 
-  disk {
+  boot_disk {
     image = "${var.gcp_image}"
   }
 
