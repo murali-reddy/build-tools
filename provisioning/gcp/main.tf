@@ -19,7 +19,9 @@ resource "google_compute_instance" "tf_test_vm" {
   count        = "${var.num_hosts}"
 
   boot_disk {
-    image = "${var.gcp_image}"
+    initialize_params {
+      image = "${var.gcp_image}"
+    }
   }
 
   tags = [
