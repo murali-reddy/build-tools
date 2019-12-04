@@ -36,7 +36,7 @@ output "private_etc_hosts" {
 output "public_etc_hosts" {
   value = "${join("\n", 
     "${formatlist("%v %v.%v.%v", 
-      google_compute_instance.tf_test_vm.*.network_interface.0.access_config.0.assigned_nat_ip, 
+      google_compute_instance.tf_test_vm.*.network_interface.0.access_config.0.nat_ip, 
       google_compute_instance.tf_test_vm.*.name, 
       google_compute_instance.tf_test_vm.*.zone, 
       var.app
